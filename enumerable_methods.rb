@@ -1,8 +1,10 @@
 module Enumerable
-  # 1. my_each method
-  def my_each(&block)
-    each(&block)
-  end
+  #1. my_each method
+  def my_each
+    for arr_item in self
+        yield(arr_item)
+    end
+end
 
   # 2. my each with index methods
   def my_each_with_index
