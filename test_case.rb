@@ -23,32 +23,32 @@ print [1, 2, 3, 4, 5].select(&:even?)
 puts ''
 
 # puts "my_all? vs. all?" test case scenario
-puts [1, 2, 3, 4, 5, 20].my_all? { |arr_item| arr_item < 10 }
-puts [1, 2, 3, 4, 5, 20].all? { |arr_item| arr_item < 10 }
+puts([1, 2, 3, 4, 5, 20].my_all? { |arr_item| arr_item < 10 })
+puts([1, 2, 3, 4, 5, 20].all? { |arr_item| arr_item < 10 })
 
 # puts "my_any? vs. any?" test case scenario
-puts [1, 2, 3, 4, 5].my_any? { |arr_item| arr_item > 3 }
-puts [1, 2, 3, 4, 5].any? { |arr_item| arr_item > 3 }
+puts([1, 2, 3, 4, 5].my_any? { |arr_item| arr_item > 3 })
+puts([1, 2, 3, 4, 5].any? { |arr_item| arr_item > 3 })
 
 # puts "my_none? vs. none?" test case scenario
-puts [1, 2, 3, 4, 5].my_none? { |arr_item| arr_item > 10 }
-puts [1, 2, 3, 4, 5].none? { |arr_item| arr_item > 10 }
+puts([1, 2, 3, 4, 5].my_none? { |arr_item| arr_item > 10 })
+puts([1, 2, 3, 4, 5].none? { |arr_item| arr_item > 10 })
 
 # puts "my_count vs. count" test case scenario
-puts [1, 2, 3, 4, 5].my_count(&:even?)
-puts [1, 2, 3, 4, 5].my_count
+puts([1, 2, 3, 4, 5].my_count(&:even?))
+puts([1, 2, 3, 4, 5].my_count)
 puts [1, 2, 3, 4, 5].count(&:even?)
 puts [1, 2, 3, 4, 5].count
 
 # puts "my_map vs. map" test case scenario
-print [1, 2, 3, 4, 5].my_map { |arr_item| arr_item * 2 }
+print([1, 2, 3, 4, 5].my_map { |arr_item| arr_item * 2 })
 puts ''
-print [1, 2, 3, 4, 5].map { |arr_item| arr_item * 2 }
+print([1, 2, 3, 4, 5].map { |arr_item| arr_item * 2 })
 puts ''
 
 # puts "my_inject vs. inject" test case scenario
-puts [1, 2, 3, 4, 5].my_inject { |sum, arr_item| sum + arr_item }
-puts [1, 2, 3, 4, 5].inject { |sum, arr_item| sum + arr_item }
+puts([1, 2, 3, 4, 5].my_inject { |sum, arr_item| sum + arr_item })
+puts([1, 2, 3, 4, 5].inject { |sum, arr_item| sum + arr_item })
 
 # puts "multiply_els" test case
 puts multiply_els([2, 4, 5])
