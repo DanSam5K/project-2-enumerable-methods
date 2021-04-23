@@ -66,7 +66,14 @@ module Enumerable
             yield(self[index], index)
         end
     end
-    #3.
+    #3. my select method
+    def my_select
+        result = []
+        my_each do |arr_item|
+          result << arr_item if yield(arr_item)
+        end
+        result
+    end
 
 end
 
@@ -80,4 +87,10 @@ puts ""
 [1,2,3,4,5].my_each_with_index   { |arr_item, index| print [arr_item, index] }
 puts ""
 [1,2,3,4,5].each_with_index  { |arr_item, index| print [arr_item, index] }
+puts ""
+
+# puts "my_select vs. select" case scenario test
+print [1,2,3,4,5].my_select { |arr_item|  arr_item.even?  }
+puts ""
+print [1,2,3,4,5].select { |arr_item|  arr_item.even?  }
 puts ""
