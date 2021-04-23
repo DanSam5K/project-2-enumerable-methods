@@ -36,7 +36,7 @@ $ git clone https://github.com/DanSam5K/project-2-enumerable-methods.git
 
 Testing
 
-To test the code, run ruby test_case.rb file.
+To test the code, run ruby test_case.rb file from your terminal.
 
 ~~~bash
 $ ruby test_case.rb
@@ -68,7 +68,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Project originally taken from [The Odin Project](https://github.com/TheOdinProject/curriculum/blob/master/archive/old_lessons/ruby/basic_ruby/project_advanced_building_blocks.md#project-2-enumerable-methodst)
+- Project implemented based on the steps from [The Odin Project](https://github.com/TheOdinProject/curriculum/blob/master/archive/old_lessons/ruby/basic_ruby/project_advanced_building_blocks.md#project-2-enumerable-methodst) Project 2: Enumerable Methods
 - Project inspired by Microverse Program
 
 ## 📝 License
