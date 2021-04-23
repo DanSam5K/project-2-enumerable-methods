@@ -17,11 +17,8 @@ Based on the [documentation](https://ruby-doc.org/core-3.0.1/Enumerable.html) we
 - #my_inject VS #inject
 - #multiply_els VS #inject that multiplies all the elements of the array together
 
-Simple right? Below is a simple animated illustration:
-
 
 ## Built With
-
 - Ruby
 
 
