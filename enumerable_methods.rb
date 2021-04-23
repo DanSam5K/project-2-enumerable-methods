@@ -74,10 +74,23 @@ module Enumerable
         end
         result
     end
+    #4. my all method
+    def my_all?
+        result = true
+        my_each do |arr_item|
+            result = false if !yield(arr_item)
+        end
+        result
+    end
+    #5.
 
 end
 
 # puts "my_each vs. each" cases scenario test
+a = [ "a", "b", "c" ]
+a.my_each {|x| print x, " -- " }
+a = [ "a", "b", "c" ]
+a.each {|x| print x, " -- " }
 [1,2,3,4,5].my_each  { |arr_item| print arr_item * 2 }
 puts ""
 [1,2,3,4,5].each  { |arr_item| print arr_item * 2 }
@@ -94,3 +107,7 @@ print [1,2,3,4,5].my_select { |arr_item|  arr_item.even?  }
 puts ""
 print [1,2,3,4,5].select { |arr_item|  arr_item.even?  }
 puts ""
+
+# puts "my_all? vs. all?"
+puts [1,2,3,4,5,20].my_all? { |arr_item| arr_item < 10 }
+puts [1,2,3,4,5,20].all? { |arr_item| arr_item < 10 }
