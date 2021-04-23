@@ -36,11 +36,10 @@ $ git clone https://github.com/DanSam5K/project-2-enumerable-methods.git
 
 Testing
 
-To test the code, run `rspec` from root of the folder using terminal.
-> Rspec is used for the test.
+To test the code, run ruby test_case.rb file.
 
 ~~~bash
-$ gem install rspec
+$ ruby test_case.rb
 ~~~
 
 ## Authors
