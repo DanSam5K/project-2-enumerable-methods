@@ -14,10 +14,10 @@ module Enumerable
   end
 
   # 3. my select method
-  def my_select
+  def my_select(&block)
     result = []
-    my_each do |arr_item|
-      result << arr_item if yield(arr_item)
+    self.my_each do |arr_item|
+      result << arr_item if block.call(element) == true
     end
     result
   end
