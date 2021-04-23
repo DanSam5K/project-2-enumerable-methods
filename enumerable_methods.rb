@@ -54,11 +54,20 @@
 # print my_all(a) {|v| v =~ /[aeiou]/ }    #=> ["a", "e"]
 
 module Enumerable
+    #1. my_each method
     def my_each
         for arr_item in self
             yield(arr_item)
         end
     end
+    #2. my each with index methods
+    def my_each_with_index
+        for index in (0..self.length - 1)
+            yield(self[index], index)
+        end
+    end
+    #3.
+
 end
 
 # puts "my_each vs. each" cases scenario test
@@ -67,3 +76,8 @@ puts ""
 [1,2,3,4,5].each  { |arr_item| print arr_item * 2 }
 puts ""
 
+# puts "my_each_with_index vs. each_with_index" case scenario test
+[1,2,3,4,5].my_each_with_index   { |arr_item, index| print [arr_item, index] }
+puts ""
+[1,2,3,4,5].each_with_index  { |arr_item, index| print [arr_item, index] }
+puts ""
