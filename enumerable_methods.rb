@@ -90,6 +90,14 @@ module Enumerable
         end
         result
     end
+    #6.
+    def my_none?
+        result = false
+        my_each do |arr_item|
+            result = true if !yield(arr_item)
+        end
+        result
+    end
 
 
 end
@@ -123,3 +131,7 @@ puts [1,2,3,4,5,20].all? { |arr_item| arr_item < 10 }
 # puts "my_any? vs. any?" test case scenario
 puts [1,2,3,4,5].my_any? { |arr_item| arr_item > 3 }
 puts [1,2,3,4,5].any? { |arr_item| arr_item > 3 }
+
+#puts "my_none? vs. none?" test case scenario
+puts [1,2,3,4,5].my_none? { |arr_item| arr_item > 10 }
+puts [1,2,3,4,5].none? { |arr_item| arr_item > 10 }
