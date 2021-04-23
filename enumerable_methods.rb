@@ -82,7 +82,15 @@ module Enumerable
         end
         result
     end
-    #5.
+    #5. my any method
+    def my_any?
+        result = false
+        my_each do |arr_item|
+            result = true if yield(arr_item)
+        end
+        result
+    end
+
 
 end
 
@@ -108,6 +116,10 @@ puts ""
 print [1,2,3,4,5].select { |arr_item|  arr_item.even?  }
 puts ""
 
-# puts "my_all? vs. all?"
+# puts "my_all? vs. all?" test case scenario
 puts [1,2,3,4,5,20].my_all? { |arr_item| arr_item < 10 }
 puts [1,2,3,4,5,20].all? { |arr_item| arr_item < 10 }
+
+# puts "my_any? vs. any?" test case scenario
+puts [1,2,3,4,5].my_any? { |arr_item| arr_item > 3 }
+puts [1,2,3,4,5].any? { |arr_item| arr_item > 3 }
