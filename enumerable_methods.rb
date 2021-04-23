@@ -115,9 +115,15 @@ module Enumerable
         end
         result
     end
- 
-
-
+    #9. my inject method
+    def my_inject initial=nil
+        initial.nil? ? result = self[0] : result = initial
+        initial.nil? ? index = 1 : index = 0
+        self[index...self.length].my_each do |arr_item|
+            result = yield(result, arr_item)
+        end
+        result
+    end 
 end
 
 # puts "my_each vs. each" cases scenario test
@@ -161,8 +167,11 @@ puts [1,2,3,4,5].count {|arr_item| arr_item % 2 == 0}
 puts [1,2,3,4,5].count
 
 # puts "my_map vs. map" test case scenario
-print [1,2,3,4,5].my_map { |num| num * 2 }
+print [1,2,3,4,5].my_map { |arr_item| arr_item * 2 }
 puts ""
-print [1,2,3,4,5].map { |num| num * 2 }
+print [1,2,3,4,5].map { |arr_item| arr_item * 2 }
 puts ""
 
+# puts "my_inject vs. inject" test case scenario
+puts [1,2,3,4,5].my_inject { |sum, arr_item| sum + arr_item }
+puts [1,2,3,4,5].inject { |sum, arr_item| sum + arr_item }
