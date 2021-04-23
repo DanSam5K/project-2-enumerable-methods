@@ -107,6 +107,14 @@ module Enumerable
         end
         result
     end
+    #8. my map method
+    def my_map 
+        result = []
+        self.my_each do |arr_item|
+                result << yield(arr_item)
+        end
+        result
+    end
  
 
 
@@ -146,8 +154,15 @@ puts [1,2,3,4,5].any? { |arr_item| arr_item > 3 }
 puts [1,2,3,4,5].my_none? { |arr_item| arr_item > 10 }
 puts [1,2,3,4,5].none? { |arr_item| arr_item > 10 }
 
-# puts "my_count vs. count"
+# puts "my_count vs. count" test case scenario
 puts [1,2,3,4,5].my_count {|arr_item| arr_item % 2 == 0}
 puts [1,2,3,4,5].my_count
 puts [1,2,3,4,5].count {|arr_item| arr_item % 2 == 0}
 puts [1,2,3,4,5].count
+
+# puts "my_map vs. map" test case scenario
+print [1,2,3,4,5].my_map { |num| num * 2 }
+puts ""
+print [1,2,3,4,5].map { |num| num * 2 }
+puts ""
+
