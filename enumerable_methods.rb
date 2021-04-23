@@ -90,7 +90,7 @@ module Enumerable
         end
         result
     end
-    #6.
+    #6. my none method
     def my_none?
         result = false
         my_each do |arr_item|
@@ -98,6 +98,16 @@ module Enumerable
         end
         result
     end
+    #7. my count method
+    def my_count
+        return self.length unless block_given?
+        result = 0
+        my_each do |arr_item|
+            result += 1 if yield(arr_item)
+        end
+        result
+    end
+ 
 
 
 end
@@ -135,3 +145,9 @@ puts [1,2,3,4,5].any? { |arr_item| arr_item > 3 }
 #puts "my_none? vs. none?" test case scenario
 puts [1,2,3,4,5].my_none? { |arr_item| arr_item > 10 }
 puts [1,2,3,4,5].none? { |arr_item| arr_item > 10 }
+
+# puts "my_count vs. count"
+puts [1,2,3,4,5].my_count {|arr_item| arr_item % 2 == 0}
+puts [1,2,3,4,5].my_count
+puts [1,2,3,4,5].count {|arr_item| arr_item % 2 == 0}
+puts [1,2,3,4,5].count
