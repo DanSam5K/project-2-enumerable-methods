@@ -125,6 +125,10 @@ module Enumerable
         result
     end 
 end
+#10. Test my inject by creating multiplication method else
+def multiply_els array
+    array.inject { |result, arr_item| result * arr_item }
+end
 
 # puts "my_each vs. each" cases scenario test
 a = [ "a", "b", "c" ]
@@ -175,3 +179,6 @@ puts ""
 # puts "my_inject vs. inject" test case scenario
 puts [1,2,3,4,5].my_inject { |sum, arr_item| sum + arr_item }
 puts [1,2,3,4,5].inject { |sum, arr_item| sum + arr_item }
+
+# puts "multiply_els" test case 
+puts multiply_els([2,4,5])
