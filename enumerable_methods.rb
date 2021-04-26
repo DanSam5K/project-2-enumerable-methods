@@ -76,13 +76,16 @@ module Enumerable
   end
 
   # 9. my inject method
-  def my_inject(initial = nil)
-    result = initial.nil? ? self[0] : initial
-    index = initial.nil? ? 1 : 0
-    self[index...length].my_each do |arr_item|
-      result = yield(result, arr_item)
+  def my_inject(*param)
+    list = is_a?(Range) ? to_a : self
+    reduce = param[0] if param[0].is_a?(Integer)
+    operator = param[0].is_a?(Symbol) ? param[0] : param[1]
+    if operator
+      list.my_each { |item| reduce = reduce ? reduce.send(operator, item) : item }
+      return reduce
     end
-    result
+    list.my_each { |item| reduce = reduce ? yield(reduce, item) : item }
+    reduce
   end
 end
 

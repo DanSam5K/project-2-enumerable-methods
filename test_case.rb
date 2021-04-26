@@ -50,8 +50,8 @@ require './enumerable_methods'
 # puts ''
 
 # # puts "my_inject vs. inject" test case scenario
-# puts([1, 2, 3, 4, 5].my_inject { |sum, arr_item| sum + arr_item })
-# puts([1, 2, 3, 4, 5].inject { |sum, arr_item| sum + arr_item })
+puts([1, 2, 3, 4, 5].my_inject { |sum, arr_item| sum + arr_item })
+puts([1, 2, 3, 4, 5].inject { |sum, arr_item| sum + arr_item })
 
 # # puts "multiply_els" test case
 # puts multiply_els([2, 4, 5])
