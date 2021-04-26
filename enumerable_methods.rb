@@ -23,10 +23,20 @@ module Enumerable
   end
 
   # 4. my all method
-  def my_all?
+  def my_all(&block)
     result = true
     my_each do |arr_item|
       result = false unless yield(arr_item)
+    end
+    result
+  end
+  
+  def find_all(&block)
+    result = []
+    each do |element|
+      if block.call(element)
+        result << element
+      end
     end
     result
   end
