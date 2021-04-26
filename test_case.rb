@@ -28,7 +28,6 @@ puts([1, 2, 3, 4, 5].select)
 # puts "my_all? vs. all?" test case scenario
 puts([1, 2, 3, 4, 5].my_all? { |arr_item| arr_item < 10 })
 puts([1, 2, 3, 4, 5].all? { |arr_item| arr_item < 10 })
-
 # puts "my_any? vs. any?" test case scenario
 puts([1, 2, 3, 4, 5].my_any? { |arr_item| arr_item > 3 })
 puts([1, 2, 3, 4, 5].any? { |arr_item| arr_item > 3 })

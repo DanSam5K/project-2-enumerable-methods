@@ -31,19 +31,16 @@ module Enumerable
   end
 
   # 4. my all method
-  def my_all?(nothing = {})
-    return my_all?(nothing) { |v| v } unless block_given?
-
-    if nothing.is_a? Regexp
-      my_all? { |v| v.match(nothing) }
-    elsif nothing == Class
-      my_all? { |v| v.is_a? nothing }
-    elsif nothing.nil?
-      my_each { |v| return false unless yield(v) }
-      true
+  def my_all?(*args)
+    result = true
+    if !args[0].nil?
+      my_each { |element| result = false unless args[0] === element }
+    elsif !block_given?
+      my_each { |element| result = false unless element }
     else
-      my_all? { |v| v == nothing }
+      my_each { |element| result = false unless yield(element) }
     end
+    result
   end
 
   # 5. my any method
