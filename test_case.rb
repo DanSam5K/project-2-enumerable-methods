@@ -17,23 +17,20 @@ require './enumerable_methods'
 # h.my_each {|key, value| puts "#{key} is #{value}" }
 # h.each {|key, value| puts "#{key} is #{value}" }
 
-
 # # puts "my_each_with_index vs. each_with_index" case scenario test
-[1, 2, 3, 4, 5].my_each_with_index { |arr_item, index| print [arr_item, index] }
-puts ''
-[1, 2, 3, 4, 5].each_with_index { |arr_item, index| print [arr_item, index] }
-puts ''
-
-puts (1...5).my_each_with_index  {|arr_item| print arr_item * 2 }
-puts (1...5).each_with_index  {|arr_item| print arr_item * 2 }
-
-hash = Hash.new
-print %w(cat dog wombat).my_each_with_index { |item, index|
-  hash[item] = index
-}
-print %w(cat dog wombat).each_with_index { |item, index|
-  hash[item] = index
-}
+# [1, 2, 3, 4, 5].my_each_with_index { |arr_item, index| print [arr_item, index] }
+# puts ''
+# [1, 2, 3, 4, 5].each_with_index { |arr_item, index| print [arr_item, index] }
+# puts ''
+# puts (1...5).my_each_with_index  {|arr_item| print arr_item * 2 }
+# puts (1...5).each_with_index  {|arr_item| print arr_item * 2 }
+# hash = Hash.new
+# print %w(cat dog wombat).my_each_with_index { |item, index|
+#   hash[item] = index
+# }
+# print %w(cat dog wombat).each_with_index { |item, index|
+#   hash[item] = index
+# }
 # # puts "my_select vs. select" case scenario test
 # print [1, 2, 3, 4, 5].my_select(&:even?)
 # puts ''

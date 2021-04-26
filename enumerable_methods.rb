@@ -2,6 +2,7 @@ module Enumerable
   # 1. my_each method
   def my_each
     return enum_for unless block_given?
+
     for arr_item in self
       yield(arr_item)
     end
