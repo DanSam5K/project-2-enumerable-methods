@@ -46,12 +46,10 @@ module Enumerable
     end
     result
   end
-
   # 6. my none method
   def my_none?(arg = nil, &block)
     !my_any?(arg, &block)
   end
-
   # 7. my count method
   def my_count(num = nil)
     count_num = 0
@@ -64,7 +62,6 @@ module Enumerable
     end
     count_num
   end
-
   # 8. my map method
   def my_map
     result = []
@@ -88,7 +85,6 @@ module Enumerable
     reduce
   end
 end
-
 # 10. Test my inject by creating multiplication method else
 def multiply_els(array)
   array.inject { |result, arr_item| result * arr_item }
