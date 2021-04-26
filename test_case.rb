@@ -52,10 +52,14 @@ require './enumerable_methods'
 # puts([1, 2, 3, 4, 5].none? { |arr_item| arr_item > 10 })
 
 # # puts "my_count vs. count" test case scenario
-# puts([1, 2, 3, 4, 5].my_count(&:even?))
-# puts([1, 2, 3, 4, 5].my_count)
-# puts [1, 2, 3, 4, 5].count(&:even?)
-# puts [1, 2, 3, 4, 5].count
+puts([1, 2, 3, 4, 5].my_count(&:even?))
+puts([1, 2, 3, 4, 5].my_count)
+puts [1, 2, 3, 4, 5].count(&:even?)
+puts [1, 2, 3, 4, 5].count
+
+puts (1..5).my_count
+puts (1..5).count
+
 
 # # puts "my_map vs. map" test case scenario
 # print([1, 2, 3, 4, 5].my_map { |arr_item| arr_item * 2 })
