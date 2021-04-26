@@ -62,7 +62,7 @@ module Enumerable
   def my_count(argument = nil)
     result = []
     count = 0
-    counter = Proc.new { |item, index| count = index + 1 }
+    counter = proc { |_item, index| count = index + 1 }
     if argument
       my_each { |item| result << item if argument == item }
       result.my_each_with_index(&counter)
@@ -70,11 +70,10 @@ module Enumerable
       my_each { |item| result << item if yield(item) }
       result.my_each_with_index(&counter)
     else
-      my_each_with_index(&counter)  
+      my_each_with_index(&counter)
     end
-    self.is_a?(Hash) ? count - 2 : count
+    is_a?(Hash) ? count - 2 : count
   end
-
 
   # 8. my map method
   def my_map
