@@ -9,8 +9,12 @@ module Enumerable
 
   # 2. my each with index methods
   def my_each_with_index
-    (0..length - 1).each do |index|
-      yield(self[index], index)
+    enum = to_a
+    if block_given?
+      enum.length.times do |arr_index|
+        yield(enum[arr_index], arr_index)
+      end
+      self
     end
   end
 
