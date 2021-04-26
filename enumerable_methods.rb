@@ -1,22 +1,19 @@
 module Enumerable
   # 1. my_each method
   def my_each
-    return enum_for unless block_given?
-
-    for arr_item in self
-      yield(arr_item)
-    end
+    size.times { |counter| yield(to_a[counter]) } if block_given?
+    block_given? ? self : enum_for(__method__)
   end
 
   # 2. my each with index methods
   def my_each_with_index
     enum = to_a
-    if block_given?
-      enum.length.times do |arr_index|
-        yield(enum[arr_index], arr_index)
-      end
-      self
+    return enum_for unless block_given?
+
+    enum.length.times do |arr_index|
+      yield(enum[arr_index], arr_index)
     end
+    self
   end
 
   # 3. my select method
