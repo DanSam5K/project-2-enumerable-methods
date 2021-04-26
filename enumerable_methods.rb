@@ -53,14 +53,16 @@ module Enumerable
   end
 
   # 7. my count method
-  def my_count
-    return length unless block_given?
-
-    result = 0
-    my_each do |arr_item|
-      result += 1 if yield(arr_item)
+  def my_count(num = nil)
+    count_num = 0
+    if num
+      my_each { |element| count_num += 1 if element == num }
+    elsif !block_given?
+      count_num = length
+    else
+      my_each { |element| count_num += 1 if yield element }
     end
-    result
+    count_num
   end
 
   # 8. my map method
