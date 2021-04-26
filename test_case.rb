@@ -21,9 +21,9 @@ print [1, 2, 3, 4, 5].my_select(&:even?)
 puts ''
 print [1, 2, 3, 4, 5].select(&:even?)
 puts ''
-#When no block is given in "my_select vs. select" case scenario test
-puts ([1,2,3,4,5].my_select)
-puts ([1,2,3,4,5].select)
+# When no block is given in "my_select vs. select" case scenario test
+puts([1, 2, 3, 4, 5].my_select)
+puts([1, 2, 3, 4, 5].select)
 
 # puts "my_all? vs. all?" test case scenario
 puts([1, 2, 3, 4, 5].my_all? { |arr_item| arr_item < 10 })
