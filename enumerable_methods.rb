@@ -18,29 +18,24 @@ module Enumerable
     result = []
     return to_enum(:my_select) unless block_given?
     my_each do |arr_item|
-        result << arr_item if yield(arr_item)
+      result << arr_item if yield(arr_item)
     end
     result
   end
-
-
+ 
   # 4. my all method
-  def my_all(&block)
-    result = true
-    my_each do |arr_item|
-      result = false unless yield(arr_item)
+  def my_all?(nothing = {})
+    return my_all?(nothing) { |v| v } unless block_given?
+    if nothing.is_a? Regexp
+        my_all? { |v| v.match(nothing) }
+    elsif nothing == Class
+        my_all? { |v| v.is_a? nothing }
+    elsif nothing == nothing
+        my_each { |v| return false unless yield(v) }
+        true
+    else
+        my_all? { |v| v == nothing }
     end
-    result
-  end
-  
-  def find_all(&block)
-    result = []
-    each do |element|
-      if block.call(element)
-        result << element
-      end
-    end
-    result
   end
 
   # 5. my any method

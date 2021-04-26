@@ -16,19 +16,26 @@ require './enumerable_methods'
 # [1, 2, 3, 4, 5].each_with_index { |arr_item, index| print [arr_item, index] }
 # puts ''
 
-# puts "my_select vs. select" case scenario test
-print [1, 2, 3, 4, 5].my_select(&:even?)
-puts ''
-print [1, 2, 3, 4, 5].select(&:even?)
-puts ''
-#When no block is given in "my_select vs. select" case scenario test
-puts ([1,2,3,4,5].my_select)
-puts ([1,2,3,4,5].select)
+# # puts "my_select vs. select" case scenario test
+# print [1, 2, 3, 4, 5].my_select(&:even?)
+# puts ''
+# print [1, 2, 3, 4, 5].select(&:even?)
+# puts ''
+# #When no block is given in "my_select vs. select" case scenario test
+# puts ([1,2,3,4,5].my_select)
+# puts ([1,2,3,4,5].select)
 
-# # puts "my_all? vs. all?" test case scenario
-# puts([1, 2, 3, 4, 5, 20].my_all? { |arr_item| arr_item < 10 })
-# puts([1, 2, 3, 4, 5, 20].all? { |arr_item| arr_item < 10 })
-
+# puts "my_all? vs. all?" test case scenario
+# puts([1, 2, 3, 4, 5].my_all? { |arr_item| arr_item < 10 })
+# puts([1, 2, 3, 4, 5].all? { |arr_item| arr_item < 10 })
+# puts %w[ant bear cat].my_all?(/t/) 
+# puts %w[ant bear cat].all?(/t/) 
+# puts [1, 2i, 3.14]my_all?(Numeric)                    
+# puts [nil, true, 99]my_all?                            
+# puts [].all?  
+# # puts [1, 2i, 3.14]my_all?(Numeric)                    
+# puts [nil, true, 99].all?                            
+# puts [].all?  
 # # puts "my_any? vs. any?" test case scenario
 # puts([1, 2, 3, 4, 5].my_any? { |arr_item| arr_item > 3 })
 # puts([1, 2, 3, 4, 5].any? { |arr_item| arr_item > 3 })
