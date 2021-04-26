@@ -3,12 +3,20 @@ require './enumerable_methods'
 # puts "my_each vs. each" cases scenario test
 a = %w[a b c]
 a.my_each { |x| print x, ' -- ' }
-a = %w[a b c]
 a.each { |x| print x, ' -- ' }
+
 [1, 2, 3, 4, 5].my_each { |arr_item| print arr_item * 2 }
 puts ''
 [1, 2, 3, 4, 5].each { |arr_item| print arr_item * 2 }
-puts ''
+
+puts (1...5).my_each { |arr_item| print arr_item * 2 }
+puts ""
+puts (1...5).each { |arr_item| print arr_item * 2 }
+
+h = { "a" => 100, "b" => 200 }
+h.my_each {|key, value| puts "#{key} is #{value}" }
+h.each {|key, value| puts "#{key} is #{value}" }
+
 
 # puts "my_each_with_index vs. each_with_index" case scenario test
 [1, 2, 3, 4, 5].my_each_with_index { |arr_item, index| print [arr_item, index] }

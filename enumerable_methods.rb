@@ -2,14 +2,9 @@ module Enumerable
   # 1. my_each method
   def my_each
     return enum_for unless block_given?
-
-    list = is_a?(Range) ? to_a : self
-    count = 0
-    while count < list.length
-      yield(list[count])
-      count += 1
+    for arr_item in self
+      yield(arr_item)
     end
-    list
   end
 
   # 2. my each with index methods
