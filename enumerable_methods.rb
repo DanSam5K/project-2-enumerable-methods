@@ -14,13 +14,15 @@ module Enumerable
   end
 
   # 3. my select method
-  def my_select(&block)
+  def my_select
     result = []
-    self.my_each do |arr_item|
-      result << arr_item if block.call(element) == true
+    return to_enum(:my_select) unless block_given?
+    my_each do |arr_item|
+        result << arr_item if yield(arr_item)
     end
     result
   end
+
 
   # 4. my all method
   def my_all(&block)
