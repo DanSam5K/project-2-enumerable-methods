@@ -5,14 +5,12 @@ module Enumerable
       yield(arr_item)
     end
   end
-
   #2. my each with index methods
   def my_each_with_index
     for index in (0..self.length - 1)
       yield(self[index], index)
     end
   end
-
   # 3. my select method
   def my_select
     result = []
@@ -22,7 +20,6 @@ module Enumerable
     end
     result
   end
- 
   # 4. my all method
   def my_all?(nothing = {})
     return my_all?(nothing) { |v| v } unless block_given?
@@ -37,12 +34,15 @@ module Enumerable
         my_all? { |v| v == nothing }
     end
   end
-
   # 5. my any method
-  def my_any?
+  def my_any?(*arg)
     result = false
-    my_each do |arr_item|
-      result = true if yield(arr_item)
+    if !arg[0].nil?
+      my_each { |element| result = true if arg[0] === element }
+    elsif !block_given?
+      my_each { |element| result = true if element }
+    else
+      my_each { |element| result = true if yield(element) }
     end
     result
   end
