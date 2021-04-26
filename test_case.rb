@@ -32,19 +32,6 @@ require './enumerable_methods'
 # # puts "my_any? vs. any?" test case scenario
 # puts([1, 2, 3, 4, 5].my_any? { |arr_item| arr_item > 3 })
 # puts([1, 2, 3, 4, 5].any? { |arr_item| arr_item > 3 })
-puts %w[ant bear cat].my_any? { |word| word.length >= 3 } #=> true
-puts %w[ant bear cat].my_any? { |word| word.length >= 4 } #=> true
-puts %w[ant bear cat].my_any?(/b/)                        #=> false
-puts [nil, true, 99].my_any?(Integer)                     #=> true
-puts [nil, true, 99].my_any?                              #=> true
-puts [].my_any? 
-puts
-puts %w[ant bear cat].any? { |word| word.length >= 3 } #=> true
-puts %w[ant bear cat].any? { |word| word.length >= 4 } #=> true
-puts %w[ant bear cat].any?(/b/)                        #=> false
-puts [nil, true, 99].any?(Integer)                     #=> true
-puts [nil, true, 99].any?                              #=> true
-puts [].any? 
 
 # # puts "my_none? vs. none?" test case scenario
 # puts([1, 2, 3, 4, 5].my_none? { |arr_item| arr_item > 10 })

@@ -48,12 +48,8 @@ module Enumerable
   end
 
   # 6. my none method
-  def my_none?
-    result = false
-    my_each do |arr_item|
-      result = true unless yield(arr_item)
-    end
-    result
+  def my_none?(arg = nil, &block)
+    !my_any?(arg, &block)
   end
 
   # 7. my count method
