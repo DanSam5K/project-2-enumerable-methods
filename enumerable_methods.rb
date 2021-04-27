@@ -77,6 +77,8 @@ module Enumerable
 
   # 8. my map method
   def my_map(proc = nil)
+    return proc.to_enum(:my_map) unless block_given?
+
     result = []
     my_each do |item|
       result << if block_given?
