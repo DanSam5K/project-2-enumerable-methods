@@ -81,7 +81,7 @@ module Enumerable
 
     result = []
     my_each do |item|
-      result << if block_given? && proc.is_a?(proc)
+      result << if block_given? && proc.is_a?(Proc)
                   proc.call(item)
                 else
                   yield(item)
